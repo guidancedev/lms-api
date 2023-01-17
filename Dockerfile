@@ -7,7 +7,7 @@ COPY package*.json ./
 # CI and release builds should use npm ci to fully respect the lockfile.
 # Local development may use npm install for opportunistic package updates.
 #ARG npm_install_command=ci
-RUN npm install -g npm@9.3.0
+RUN yarn dev
 
 COPY . .
 
@@ -16,7 +16,7 @@ FROM test-target as build-target
 #ENV NODE_ENV=production
 
 # Use build tools, installed as development packages, to produce a release build.
-RUN yarn dev
+#RUN yarn dev
 
 # Reduce installed packages to production-only.
 #RUN npm prune --production
