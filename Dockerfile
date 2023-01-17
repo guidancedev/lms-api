@@ -7,7 +7,7 @@ COPY package*.json ./
 # CI and release builds should use npm ci to fully respect the lockfile.
 # Local development may use npm install for opportunistic package updates.
 #ARG npm_install_command=ci
-RUN npm install
+RUN npm install -g npm@9.3.0
 
 COPY . .
 
