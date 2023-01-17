@@ -16,7 +16,7 @@ FROM test-target as build-target
 #ENV NODE_ENV=production
 
 # Use build tools, installed as development packages, to produce a release build.
-RUN npm run dev
+RUN yarn dev
 
 # Reduce installed packages to production-only.
 #RUN npm prune --production
